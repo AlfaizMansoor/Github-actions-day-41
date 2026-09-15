@@ -17,4 +17,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: print input
-              run: echo "Environment selected${{ inputs.environment.type.required }}"
+              run: echo "Environment selected${{ inputs.environment.type.options }}"
