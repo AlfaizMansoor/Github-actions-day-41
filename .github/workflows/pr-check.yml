@@ -16,3 +16,6 @@ jobs:
 
       - name: hey Alfaiz
         run: echo "Hey Alfaiz you are doing great, keep it up!"
+
+      - name: pull request
+        run: echo "pull request created successsfully"
