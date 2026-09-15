@@ -1,0 +1,26 @@
+name: matrix
+
+on:
+    workflow_dispatch:
+
+jobs: 
+    validate:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                python-versions: [3.10. 3.11, 3.12]
+        
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
+            - name: Set up Python ${{ matrix.python-versions }}
+              uses: actions/setup-python@v5
+              with:
+                python-version: ${{ matrix.python-versions }} 
+
+            - name: install python
+              run: |
+               sudo apt update
+               sudo apt install python3
+               python -- version
