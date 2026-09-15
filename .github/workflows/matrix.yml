@@ -5,15 +5,17 @@ on:
 
 jobs: 
     validate:
-        runs-on: [ubuntu-latest, windows-latest]
+        runs-on: ubuntu-latest, windows-latest
         strategy:
             fail-fast: false
             matrix:
+                os: [ubuntu-latest, windows-latest]
                 python-versions: ["3.10", "3.11", "3.12"]
                 exclude:
                     - runs-on: windows-latest
-                      python-versions: ["3.10"]
-        
+                      python-versions: "3.10"
+
+
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
